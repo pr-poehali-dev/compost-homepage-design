@@ -17,7 +17,7 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
+        <div className="space-y-8 animate-slide-in-left">
           <div className="space-y-4">
             <h1 className="text-5xl lg:text-6xl font-bold text-primary leading-tight">
               Compost saves the planet
@@ -31,7 +31,7 @@ export default function Index() {
           <div className="flex items-center gap-4">
             <Button 
               size="lg" 
-              className="rounded-full px-8 py-6 text-lg bg-primary hover:bg-primary/90"
+              className="rounded-full px-8 py-6 text-lg bg-primary hover:bg-primary/90 hover:scale-105 transition-transform duration-200"
             >
               Get started
               <Icon name="ArrowRight" size={20} className="ml-2" />
@@ -39,15 +39,15 @@ export default function Index() {
           </div>
 
           {/* Playful doodles */}
-          <div className="flex items-center gap-4 text-accent">
-            <Icon name="Sparkles" size={24} />
+          <div className="flex items-center gap-4 text-accent animate-fade-in-up">
+            <Icon name="Sparkles" size={24} className="animate-pulse" />
             <span className="text-sm font-medium">Fresh • Clean • Planet-friendly</span>
-            <Icon name="Leaf" size={24} />
+            <Icon name="Leaf" size={24} className="animate-pulse" />
           </div>
         </div>
 
         <div className="relative">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
             <img 
               src="/img/b56f3600-e6d4-4584-94b6-8cafde3b30ba.jpg"
               alt="Compost buckets"
@@ -56,10 +56,10 @@ export default function Index() {
           </div>
           
           {/* Floating elements */}
-          <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground rounded-full p-4 shadow-lg animate-bounce">
+          <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground rounded-full p-4 shadow-lg animate-float">
             <Icon name="Recycle" size={24} />
           </div>
-          <div className="absolute -bottom-4 -left-4 bg-secondary text-secondary-foreground rounded-full p-4 shadow-lg">
+          <div className="absolute -bottom-4 -left-4 bg-secondary text-secondary-foreground rounded-full p-4 shadow-lg animate-pulse">
             <Icon name="Heart" size={24} />
           </div>
         </div>
@@ -271,6 +271,201 @@ export default function Index() {
               </div>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Coverage Map Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-primary mb-4">Service Coverage</h2>
+            <p className="text-xl text-muted-foreground">Currently serving these areas with weekly pickup</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="grid grid-cols-2 gap-6">
+                <Card className="p-6 bg-accent/5 border border-accent/20 hover:border-accent/40 transition-colors cursor-pointer">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                    <div>
+                      <h4 className="font-semibold">Brooklyn</h4>
+                      <p className="text-sm text-muted-foreground">Available now</p>
+                    </div>
+                  </div>
+                </Card>
+                
+                <Card className="p-6 bg-accent/5 border border-accent/20 hover:border-accent/40 transition-colors cursor-pointer">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                    <div>
+                      <h4 className="font-semibold">Manhattan</h4>
+                      <p className="text-sm text-muted-foreground">Available now</p>
+                    </div>
+                  </div>
+                </Card>
+                
+                <Card className="p-6 bg-secondary/10 border border-secondary/30 hover:border-secondary/50 transition-colors cursor-pointer">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                    <div>
+                      <h4 className="font-semibold">Queens</h4>
+                      <p className="text-sm text-muted-foreground">Coming soon</p>
+                    </div>
+                  </div>
+                </Card>
+                
+                <Card className="p-6 bg-secondary/10 border border-secondary/30 hover:border-secondary/50 transition-colors cursor-pointer">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                    <div>
+                      <h4 className="font-semibold">Bronx</h4>
+                      <p className="text-sm text-muted-foreground">Coming soon</p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+              
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-primary">Expanding citywide</h3>
+                <p className="text-muted-foreground">
+                  Join our waitlist to be the first to know when we launch in your neighborhood. 
+                  We're adding new areas every month based on demand.
+                </p>
+                <Button variant="outline" className="rounded-full">
+                  Join Waitlist
+                  <Icon name="MapPin" size={16} className="ml-2" />
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-accent/10 to-secondary/10 rounded-3xl p-8">
+                <div className="bg-white rounded-2xl p-8 shadow-lg">
+                  <div className="text-center mb-6">
+                    <Icon name="Map" size={48} className="text-primary mx-auto mb-4" />
+                    <h4 className="text-xl font-semibold mb-2">Interactive Coverage Map</h4>
+                    <p className="text-sm text-muted-foreground">Click on areas to check availability</p>
+                  </div>
+                  
+                  <div className="relative bg-muted/20 rounded-xl h-64 flex items-center justify-center">
+                    <div className="absolute inset-4 grid grid-cols-2 gap-2">
+                      <div className="bg-accent/20 rounded-lg border-2 border-accent hover:bg-accent/30 transition-colors cursor-pointer flex items-center justify-center">
+                        <span className="text-sm font-medium">Brooklyn</span>
+                      </div>
+                      <div className="bg-accent/20 rounded-lg border-2 border-accent hover:bg-accent/30 transition-colors cursor-pointer flex items-center justify-center">
+                        <span className="text-sm font-medium">Manhattan</span>
+                      </div>
+                      <div className="bg-muted/30 rounded-lg border-2 border-muted hover:bg-muted/40 transition-colors cursor-pointer flex items-center justify-center">
+                        <span className="text-sm font-medium text-muted-foreground">Queens</span>
+                      </div>
+                      <div className="bg-muted/30 rounded-lg border-2 border-muted hover:bg-muted/40 transition-colors cursor-pointer flex items-center justify-center">
+                        <span className="text-sm font-medium text-muted-foreground">Bronx</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Savings Calculator Section */}
+      <section className="bg-muted/30 py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-primary mb-4">Calculate Your Impact</h2>
+            <p className="text-xl text-muted-foreground">See how much waste you'll divert and money you'll save</p>
+          </div>
+
+          <Card className="p-8 bg-card shadow-lg rounded-2xl border-0">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-sm font-semibold mb-2">Household size</label>
+                  <select className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent">
+                    <option>1-2 people</option>
+                    <option>3-4 people</option>
+                    <option>5+ people</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold mb-2">Weekly food waste (estimated)</label>
+                  <div className="relative">
+                    <input 
+                      type="range" 
+                      min="1" 
+                      max="10" 
+                      defaultValue="5"
+                      className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer accent-accent"
+                    />
+                    <div className="flex justify-between text-xs text-muted-foreground mt-1">
+                      <span>Low</span>
+                      <span>High</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-semibold mb-2">Current waste disposal method</label>
+                  <select className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent">
+                    <option>Regular trash</option>
+                    <option>Food disposal unit</option>
+                    <option>Home composting (limited)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-accent/10 rounded-2xl p-6">
+                  <h3 className="text-lg font-semibold text-primary mb-4">Your Monthly Impact</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        <Icon name="Trash2" size={20} className="text-accent" />
+                        <span className="text-sm">Waste diverted</span>
+                      </div>
+                      <span className="font-semibold">~15 lbs</span>
+                    </div>
+                    
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        <Icon name="Leaf" size={20} className="text-accent" />
+                        <span className="text-sm">Compost created</span>
+                      </div>
+                      <span className="font-semibold">~8 lbs</span>
+                    </div>
+                    
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        <Icon name="DollarSign" size={20} className="text-accent" />
+                        <span className="text-sm">Potential savings</span>
+                      </div>
+                      <span className="font-semibold">$12-18</span>
+                    </div>
+                    
+                    <div className="border-t border-accent/20 pt-4">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center gap-2">
+                          <Icon name="Calendar" size={20} className="text-primary" />
+                          <span className="text-sm font-semibold">Yearly impact</span>
+                        </div>
+                        <span className="font-bold text-primary">180 lbs diverted</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <Button size="lg" className="w-full rounded-xl bg-primary hover:bg-primary/90">
+                  Start My Subscription
+                  <Icon name="ArrowRight" size={20} className="ml-2" />
+                </Button>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
